@@ -1,0 +1,16 @@
+*************LIRI-BOT********
+LIRI is a command line node app that takes in parameters and gives you back data.
+LIRI takes the following commands
+.my-tweets
+when "my-tweets" command is provided LIRI displays 20 recent tweets of the user.
+.spotify-this-song
+when "spotify-this-song" command with the user search track is given Liri gives the Artist Name,Link to the song
+.movie-this
+when "movie-this" command is given the default movie details are shown.
+"movie-this" with user search movie can also shows all the movie details.
+.do-what-it-says
+This is by default set to the track "I want it that way"
+API's Used for LIRI-BOT
+.Twitter
+.Spotify API
+.OMDB
