@@ -119,29 +119,17 @@ switch (action){
 // * `my-tweets`
 
 function myTweets(){
+    var keys = require("./keys.js");
+    var Twitter = require("twitter");
 
 
 
     var twitterKeys = keys.twitterKeys;
 
-    // console.log("hello I am twitterKeys", keys,twitterKeys);
+    var client = new Twitter(twitterKeys);
 
 
-
-    var client = new Twitter({
-//  //         
-consumer_key: '8KGjPmZKx8uj7c9VpARG6ZLP2',
-consumer_secret: 'wjMvb9GB2fyegD77sJ3amsHHti5c17EiZ6TKa3z432tAC0vEbG',
-access_token_key: '933419115175297024-DYUfA3jwtCpuHH9uhjx2H5udJdPENvz',
-access_token_secret: 't7DrelYIxVURJr17gyyoKeaot8Wthc2NlO0mw7oho9raW'
-       });
-
-
-
-
-
-
-    var params = {screen_name: "@preethiAlam", count:20};
+ var params = {screen_name: "@preethiAlam", count:20};
 
 
 
@@ -170,143 +158,6 @@ access_token_secret: 't7DrelYIxVURJr17gyyoKeaot8Wthc2NlO0mw7oho9raW'
 });
 
 }
-
-
-
-
-
-
-
-
-
-
-// // * `spotify-this-song`
-
-// // Function for determining which command is executed
-
-// function spotifyThisSong (value){
-
-
-// // var spotifyKeys = keys.spotifyKeys;
-// // var spotify = new Spotify({
-// //     id: 'fab2126ac8614424800d28f2b2a0db8c' ,
-
-// //  secret: '3506c2a32ba146a08b8370182e824ee1' 
-
-// // });
-// var Spotify = require('node-spotify-api');
-
-// var spotify = new Spotify({
-//   id: 'fab2126ac8614424800d28f2b2a0db8c',
-//   secret: '3506c2a32ba146a08b8370182e824ee1' 
-
-// });
-
-
-
-
-//   spotify.search({
-
-//     type:"track",
-
-//     query: 'value'},
-//      function(err, data){
-
-
-
-//       if (err) {
-
-//         console.log("Error occurred: " + err);
-
-//         return;
-
-//       }
-
-
-
-//  // else{
-// //         console.log(data);
-
-
-// //       }
-// //   });
-// // }
-
-//   // * if no song is provided then your program will default to
-
-//   //   * "The Sign" by Ace of Base
-
-//   if(value === ""){
-
-//       console.log("************");
-
-//       console.log("Artist: Ace of Base");
-
-//       console.log("Song: The Sign");
-
-//       console.log("Song Link: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE");
-
-//       console.log("Album: The Sign");
-
-//       console.log("************");
-
-//   }
-
-//   else{
-
-
-
-//   for (i = 0; i < 5; i++){
-
-
-
-//       var results = data.tracks.items[i];
-
-
-
-//       var artist = results.artists[0].name;
-
-//       var songName = results.name;
-
-//       var songLink = results.external_urls.spotify;
-
-//       var album = results.album.name;
-
-
-
-//       //Need: artist(s), song's name, preview link of song, album//
-
-//       console.log("************");
-
-//       console.log("Artist: " + artist);
-
-//       console.log("Song: " + songName);
-
-//       console.log("Song Link: " + songLink);
-
-//       console.log("Album: " + album);
-
-//       console.log("************");
-
-//     }
-
-// }
-
-
-
-// });
-
-
-
-// }
-
-
-
-
-
-
-
-
 
 
 // * `movie-this`
@@ -374,7 +225,8 @@ else{
     console.log("Language: " + JSON.parse(body).results[0].original_language);
 
     
-    
+    // console.log("Rotton Tomatoes Rating of the movie: " + JSON.parse(body).Ratings[1].Value);
+    // console.log("Country where the movie was produced: " + JSON.parse(body).Country);
 
 }
 
@@ -385,78 +237,8 @@ else{
 }
 
 
-// do-what-it says///////////function
 
 
-// function doThis(){
-
-
-
-// // Feel free to change the text in that document to test out the feature for other commands.
-
-// fs.readFile("random.txt", "utf8", function(error,data){
-
-
-
-//   var content = data.split(",");
-
-
-
-//   // var array = data.toString().split("\n");
-
-//   // console.log(array);
-
-
-
-//   action = content[0];
-
-//   value = content[1];
-
-
-
-//   switch (action){
-
-//   case "my-tweets":
-
-//   myTweets();
-
-//   break;
-
-
-
-//   // case "spotify-this-song":
-
-//   // spotifyThisSong();
-
-//   // break;
-
-
-
-//   case "movie-this":
-
-//   movieThis();
-
-//   break;
-
-
-
-//   // case "do-what-it-says":
-
-//   // doThis();
-
-//   // break;
-
-
-
-// }
-
-
-
-// });
-
-
-
-// }
 
 
 
